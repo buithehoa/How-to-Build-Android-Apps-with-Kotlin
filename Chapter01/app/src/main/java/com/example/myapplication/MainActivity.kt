@@ -13,7 +13,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setEnterButtonClickListener()
+    }
 
+    private fun setEnterButtonClickListener() {
         findViewById<Button>(R.id.enter_button)?.setOnClickListener{
             val greetingDisplay = findViewById<TextView>(R.id.greeting_display)
             val firstName = findViewById<TextInputEditText>(R.id.first_name)?.text.toString().trim()
