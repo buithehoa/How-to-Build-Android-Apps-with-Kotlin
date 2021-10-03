@@ -35,6 +35,7 @@
         app:layout_constraintTop_toBottomOf="@+id/header_text"
         app:layout_constraintStart_toStartOf="parent" />
     <EditText
+        android:id="@+id/last_name"
         android:textSize="@dimen/default_text_size"
         android:layout_marginEnd="@dimen/grid_24"
         android:layout_marginRight="@dimen/grid_24"
