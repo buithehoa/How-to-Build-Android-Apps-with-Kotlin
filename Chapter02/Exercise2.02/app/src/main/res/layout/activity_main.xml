@@ -21,4 +21,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:id="@+id/first_name"
+        android:textSize="@dimen/default_text_size"
+        android:layout_marginStart="@dimen/grid_24"
+        android:layout_marginLeft="@dimen/grid_24"
+        android:layout_marginEnd="@dimen/grid_16"
+        android:layout_marginRight="@dimen/grid_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/first_name_label"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/header_text"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText
+        android:textSize="@dimen/default_text_size"
+        android:layout_marginEnd="@dimen/grid_24"
+        android:layout_marginRight="@dimen/grid_24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/last_name_label"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/header_text"
+        app:layout_constraintStart_toEndOf="@id/first_name"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <EditText
+        android:id="@+id/email"
+        android:textSize="@dimen/default_text_size"
+        android:layout_marginStart="@dimen/grid_24"
+        android:layout_marginLeft="@dimen/grid_24"
+        android:layout_marginEnd="@dimen/grid_32"
+        android:layout_marginRight="@dimen/grid_32"
+        android:hint="@string/email_label"
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/first_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </androidx.constraintlayout.widget.ConstraintLayout>
