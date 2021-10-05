@@ -3,6 +3,7 @@ package com.example.saveandrestore
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
@@ -14,6 +15,8 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "MainActivity"
+        private const val DISCOUNT_CONFIRMATION_MESSAGE = "DISCOUNT_CONFIRMATION_MESSAGE"
+        private const val DISCOUNT_CODE = "DISCOUNT_CODE"
     }
     private val discountButton: Button
         get() = findViewById(R.id.discount_button)
@@ -54,6 +57,22 @@ class MainActivity : AppCompatActivity() {
                 clearInputFields()
             }
         }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.d(TAG, "onRestoreInstanceState")
+
+        discountCode.text = savedInstanceState.getString(DISCOUNT_CODE, "")
+        discountCodeConfirmation.text = savedInstanceState.getString(DISCOUNT_CONFIRMATION_MESSAGE, "")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.d(TAG, "onSaveInstanceState")
+
+        outState.putString(DISCOUNT_CODE, discountCode.text.toString())
+        outState.putString(DISCOUNT_CONFIRMATION_MESSAGE, discountCodeConfirmation.text.toString())
     }
 
     private fun clearInputFields() {
