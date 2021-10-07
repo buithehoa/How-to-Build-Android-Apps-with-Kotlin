@@ -55,4 +55,14 @@
         <item name="android:layout_height">60dp</item>
         <item name="android:layout_width">340dp</item>
     </style>
+
+    <!-- Instruction text style for choosing rainbow color -->
+    <style name="body" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
