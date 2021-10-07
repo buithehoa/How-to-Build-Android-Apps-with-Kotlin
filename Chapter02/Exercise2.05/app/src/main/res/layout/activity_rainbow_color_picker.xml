@@ -23,6 +23,62 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/red_button"
+            style="@style/button"
+            android:background="@color/red"
+            android:text="@string/red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/orange_button"
+            style="@style/button"
+            android:background="@color/orange"
+            android:text="@string/orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/yellow_button"
+            style="@style/button"
+            android:background="@color/yellow"
+            android:text="@string/yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/green_button"
+            style="@style/button"
+            android:background="@color/green"
+            android:text="@string/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/blue_button"
+            style="@style/button"
+            android:background="@color/blue"
+            android:text="@string/blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/indigo_button"
+            style="@style/button"
+            android:background="@color/indigo"
+            android:text="@string/indigo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/violet_button"
+            style="@style/button"
+            android:background="@color/violet"
+            android:text="@string/violet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <TextView
             style="@style/body"
             android:text="@string/footer_text_picker"
@@ -31,6 +87,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
     </LinearLayout>
 
 </ScrollView>
