@@ -44,5 +44,4 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.number2).setOnClickListener(buttonClickListener)
         findViewById<View>(R.id.number3).setOnClickListener(buttonClickListener)
     }
-
 }
