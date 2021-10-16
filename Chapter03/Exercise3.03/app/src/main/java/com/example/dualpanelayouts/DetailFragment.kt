@@ -48,7 +48,7 @@ class DetailFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
-    fun setStarSignDate(starSignId: Int) {
+    fun setStarSignData(starSignId: Int) {
         when (starSignId) {
             R.id.aquarius -> {
                 starSign?.text = getString(R.string.aquarius)
