@@ -23,7 +23,13 @@ class MainActivity : AppCompatActivity(), StarSignListener {
         }
     }
 
-    override fun onSelected(id: Int) {
-        TODO("Not yet implemented")
+    override fun onSelected(starSignId: Int) {
+        findViewById<FragmentContainerView>(R.id.fragment_container)?.let { frameLayout ->
+            val detailFragment = DetailFragment.newInstance(starSignId)
+            supportFragmentManager.beginTransaction()
+                .replace(frameLayout.id, detailFragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 }
