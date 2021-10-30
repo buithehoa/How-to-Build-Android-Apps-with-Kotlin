@@ -2,6 +2,7 @@ package com.example.catagentprofile
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.example.catagentprofile.api.TheCatApiService
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -16,6 +17,10 @@ class MainActivity : AppCompatActivity() {
 
     private val theCatApiService by lazy {
         retrofit.create(TheCatApiService::class.java)
+    }
+
+    private val serverResponseView: TextView by lazy {
+        findViewById(R.id.main_server_response)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
