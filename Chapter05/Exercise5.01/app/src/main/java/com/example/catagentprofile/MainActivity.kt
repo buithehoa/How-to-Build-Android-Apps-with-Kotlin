@@ -40,11 +40,11 @@ class MainActivity : AppCompatActivity() {
     private fun getCatImageResponse() {
         val call = theCatApiService.searchImages(1, "full")
         call.enqueue(object : Callback<List<ImageResultData>> {
-            override fun onFailure(call: Call<ImageResultData>, t: Throwable) {
+            override fun onFailure(call: Call<List<ImageResultData>>, t: Throwable) {
                 Log.e("MainActivity", "Failed to get search results", t)
             }
 
-            override fun onResponse(call: Call<ImageResultData>, response: Response<List<ImageResultData>>) {
+            override fun onResponse(call: Call<List<ImageResultData>>, response: Response<List<ImageResultData>>) {
                 if (response.isSuccessful) {
                     val imageResults = response.body()
                     val firstImageUrl = imageResults?.firstOrNull()?.imageUrl ?: "No URL"
