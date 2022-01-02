@@ -44,13 +44,18 @@ class MainActivity : AppCompatActivity() {
                 Log.e("MainActivity", "Failed to get search results", t)
             }
 
-            override fun onResponse(call: Call<List<ImageResultData>>, response: Response<List<ImageResultData>>) {
+            override fun onResponse(
+                call: Call<List<ImageResultData>>,
+                response: Response<List<ImageResultData>>) {
+
                 if (response.isSuccessful) {
                     val imageResults = response.body()
                     val firstImageUrl = imageResults?.firstOrNull()?.imageUrl ?: "No URL"
                     serverResponseView.text = "Image URL: $firstImageUrl"
                 } else {
-                    Log.e("MainActivity", "Failed to get search results\n${response.errorBody()?.string() ?: ""}")
+                    Log.e(
+                        "MainActivity",
+                        "Failed to get search results\n${response.errorBody()?.string() ?: ""}")
                 }
             }
         })
