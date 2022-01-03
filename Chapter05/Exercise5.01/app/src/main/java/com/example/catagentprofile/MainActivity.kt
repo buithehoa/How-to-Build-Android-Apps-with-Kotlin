@@ -1,10 +1,9 @@
 package com.example.catagentprofile
 
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.catagentprofile.api.TheCatApiService
 import com.example.catagentprofile.model.ImageResultData
 import retrofit2.Call
@@ -12,7 +11,6 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private val retrofit by lazy {
