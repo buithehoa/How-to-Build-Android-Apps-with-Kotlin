@@ -2,6 +2,7 @@ package com.example.catagentprofile
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.catagentprofile.api.TheCatApiService
@@ -26,6 +27,10 @@ class MainActivity : AppCompatActivity() {
 
     private val serverResponseView: TextView by lazy {
         findViewById(R.id.main_server_response)
+    }
+
+    private val profileImageView: ImageView by lazy {
+        findViewById(R.id.main_profile_image)
     }
 
     private val imageLoader: ImageLoader by lazy {
@@ -56,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                     if (firstImageUrl.isBlank()) {
                         Log.d("MainActivity", "Missing image URL")
                     } else {
-                        imageLoader.loadImage(firstImageUrl, findViewById(R.id.main_profile_image))
+                        imageLoader.loadImage(firstImageUrl, profileImageView)
                     }
 
                     serverResponseView.text = "Image URL: $firstImageUrl"
