@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         retrofit.create(TheCatApiService::class.java)
     }
 
-    private val serverResponseView: TextView by lazy {
-        findViewById(R.id.main_server_response)
+    private val agentBreedView: TextView by lazy {
+        findViewById(R.id.main_agent_breed_value)
     }
 
     private val profileImageView: ImageView by lazy {
@@ -64,7 +64,8 @@ class MainActivity : AppCompatActivity() {
                         imageLoader.loadImage(firstImageUrl, profileImageView)
                     }
 
-                    serverResponseView.text = "Image URL: $firstImageUrl"
+                    agentBreedView.text =
+                        imageResults?.firstOrNull()?.breeds?.firstOrNull()?.name ?: "Unknown"
                 } else {
                     Log.e(
                         "MainActivity",
