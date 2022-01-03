@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         findViewById(R.id.main_server_response)
     }
 
+    private val imageLoader: ImageLoader by lazy {
+        GlideImageLoader(this)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,6 +55,12 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val imageResults = response.body()
                     val firstImageUrl = imageResults?.firstOrNull()?.imageUrl ?: "No URL"
+                    if (firstImageUrl.isBlank()) {
+                        Log.d("MainActivity", "Missing image URL")
+                    } else {
+                        imageLoader.loadImage(firstImageUrl, findViewById(R.id.main_profile_image))
+                    }
+
                     serverResponseView.text = "Image URL: $firstImageUrl"
                 } else {
                     Log.e(
