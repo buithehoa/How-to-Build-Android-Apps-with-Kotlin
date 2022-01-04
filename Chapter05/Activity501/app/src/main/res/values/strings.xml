@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Activity5.01</string>
+    <string name="app_name">Sai Gon Weather</string>
+    <string name="weather_icon_description">Weather image icon</string>
 </resources>
