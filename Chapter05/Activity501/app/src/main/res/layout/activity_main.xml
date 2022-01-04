@@ -23,5 +23,14 @@
         app:layout_constraintStart_toEndOf="@id/short_description"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MetaWeather provides an API that delivers JSON over HTTPS for access to our data."
+        android:paddingBottom="16dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/short_description" />
 </androidx.constraintlayout.widget.ConstraintLayout>
