@@ -18,6 +18,7 @@
 
     <ImageView
         android:id="@+id/main_weather_icon"
+        android:contentDescription="@string/weather_icon_description"
         android:layout_width="64dp"
         android:layout_height="64dp"
         tools:background="@color/colorAccent"
@@ -37,7 +38,6 @@
         android:id="@+id/main_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="MetaWeather provides an API that delivers JSON over HTTPS for access to our data."
         app:layout_constraintTop_toBottomOf="@+id/main_status"
         app:layout_constraintEnd_toStartOf="@+id/main_weather_icon"
         app:layout_constraintStart_toStartOf="parent" />
