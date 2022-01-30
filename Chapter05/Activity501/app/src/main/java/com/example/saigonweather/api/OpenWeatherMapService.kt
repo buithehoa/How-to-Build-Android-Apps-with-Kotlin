@@ -1,6 +1,6 @@
 package com.example.saigonweather.api
 
-import com.example.saigonweather.model.openweathermap.Response
+import com.example.saigonweather.model.openweathermap.ResponseData
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -10,5 +10,5 @@ interface OpenWeatherMapService {
     fun getWeather(
         @Query("q") q: String,
         @Query("appid") appid: String
-    ) : Call<Response>
+    ) : Call<ResponseData>
 }
