@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.saigonweather.api.OpenWeatherMapService
 import com.example.saigonweather.model.openweathermap.ResponseData
 import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -47,9 +49,31 @@ class MainActivity : AppCompatActivity() {
                     TODO("Not yet implemented")
                 }
 
-                override fun onResponse(call: Call<ResponseData>, response: retrofit2.Response<ResponseData>) {
-                    TODO("Not yet implemented")
-                }
+                override fun onResponse(
+                    call: Call<ResponseData>,
+                    response: retrofit2.Response<ResponseData>
+                ) = handleResponse(response)
             })
+    }
+
+    private fun handleResponse(response: retrofit2.Response<ResponseData>) =
+        if (response.isSuccessful) {
+            response.body()?.let { validResponse ->
+                handleValidResponse(validResponse)
+            } ?: Unit
+        } else {
+
+        }
+
+    private fun handleValidResponse(response: ResponseData) {
+        titleView.text = response.locationName
+        response.weather.firstOrNull()?.let { weather ->
+            statusView.text = weather.status
+            descriptionView.text = weather.description
+            Glide.with(this)
+                .load("https://openweathermap.org/img/wn/${weather.icon}@2x.png")
+                .centerInside()
+                .into(weatherIconView)
+        }
     }
 }
