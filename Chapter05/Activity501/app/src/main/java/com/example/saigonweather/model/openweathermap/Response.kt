@@ -1,4 +1,7 @@
 package com.example.saigonweather.model.openweathermap
 
-class Response(val weatherStateAbbr: String, val weatherStateName: String) {
-}
+import com.squareup.moshi.Json
+
+class Response(
+    @field:Json(name = "name") val locationName: String,
+    val weather: List<ResponseWeather>)
