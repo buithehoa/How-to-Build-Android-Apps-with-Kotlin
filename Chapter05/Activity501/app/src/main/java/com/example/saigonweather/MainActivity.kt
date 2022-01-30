@@ -1,4 +1,4 @@
-package com.example.activity501
+package com.example.saigonweather
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

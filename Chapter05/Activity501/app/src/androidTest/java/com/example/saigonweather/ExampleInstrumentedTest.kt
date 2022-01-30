@@ -1,4 +1,4 @@
-package com.example.activity501
+package com.example.saigonweather
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
