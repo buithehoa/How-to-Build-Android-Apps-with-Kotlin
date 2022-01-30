@@ -7,30 +7,37 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/short_description"
-        android:layout_width="wrap_content"
+        android:id="@+id/main_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Clear"
-        android:padding="16dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/main_weather_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/weather_icon"
+        android:id="@+id/main_weather_icon"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:contentDescription="@string/weather_icon_description"
-        app:layout_constraintStart_toEndOf="@id/short_description"
+        tools:background="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:id="@+id/main_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/main_weather_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_title" />
+
+    <TextView
+        android:id="@+id/main_description"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="MetaWeather provides an API that delivers JSON over HTTPS for access to our data."
-        android:paddingBottom="16dp"
-        android:paddingRight="16dp"
-        android:paddingLeft="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/short_description" />
+        app:layout_constraintTop_toBottomOf="@+id/main_status"
+        app:layout_constraintEnd_toStartOf="@+id/main_weather_icon"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
