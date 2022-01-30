@@ -1,6 +1,7 @@
 package com.example.saigonweather.api
 
 import com.example.saigonweather.model.openweathermap.Response
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
