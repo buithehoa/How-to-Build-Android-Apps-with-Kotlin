@@ -5,7 +5,6 @@ plugins {
 
 android {
     compileSdkVersion 31
-    buildToolsVersion "30.0.2"
 
     defaultConfig {
         applicationId "com.example.recipebook"
@@ -30,6 +29,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.example.recipebook'
 }
 
 dependencies {
